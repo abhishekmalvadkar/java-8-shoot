@@ -14,7 +14,7 @@ public class Problem_1 {
 	public static void main(String[] args) {
 		List<Integer> numbers = List.of(1 , 5 , 2 , 3 , 8 , 7);
 		List<Integer> evenNumbers = numbers.stream()
-			   .filter(number -> isEvenNUmber(number))
+			   .filter(Problem_1::isEvenNUmber)
 			   .collect(toList());
 		// void accept(T t);
 		evenNumbers.forEach(System.out::println);
