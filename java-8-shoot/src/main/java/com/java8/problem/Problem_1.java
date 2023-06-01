@@ -17,7 +17,7 @@ public class Problem_1 {
 			   .filter(number -> number % 2 == 0)
 			   .collect(toList());
 		// void accept(T t);
-		evenNumbers.forEach(number -> System.out.println(number));
+		evenNumbers.forEach(System.out::println);
 		
 		
 		
