@@ -16,10 +16,8 @@ public class Problem_1 {
 		List<Integer> evenNumbers = numbers.stream()
 			   .filter(number -> number % 2 == 0)
 			   .collect(toList());
-		
-		for (Integer number : evenNumbers) {
-			System.out.println(number);
-		}
+		// void accept(T t);
+		evenNumbers.forEach(number -> System.out.println(number));
 		
 		
 		
