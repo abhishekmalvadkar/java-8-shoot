@@ -14,7 +14,7 @@ public class Problem_2 {
 		List<Integer> numbers = List.of(11, 12, 21, 33, 55 , 131);
 		List<String> startWithOneNumbers = numbers.stream()
 								.map(String::valueOf)
-								.filter(numberStr -> isStartWithOne(numberStr))
+								.filter(Problem_2::isStartWithOne)
 								.toList();
 
 		startWithOneNumbers.forEach(System.out::println);
