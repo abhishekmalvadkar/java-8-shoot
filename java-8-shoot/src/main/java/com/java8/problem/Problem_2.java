@@ -14,11 +14,15 @@ public class Problem_2 {
 		List<Integer> numbers = List.of(11, 12, 21, 33, 55 , 131);
 		List<String> startWithOneNumbers = numbers.stream()
 								.map(String::valueOf)
-								.filter(numberStr -> numberStr.startsWith("1"))
+								.filter(numberStr -> isStartWithOne(numberStr))
 								.toList();
 
 		startWithOneNumbers.forEach(System.out::println);
 
+	}
+
+	private static boolean isStartWithOne(String numberStr) {
+		return numberStr.startsWith("1");
 	}
 
 }
