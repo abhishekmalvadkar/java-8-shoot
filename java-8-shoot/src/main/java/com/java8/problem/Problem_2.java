@@ -4,13 +4,10 @@ import java.util.List;
 
 class StringPredicate {
 	
-	public static boolean isStartWithOne(String numberStr) {
+	public boolean isStartWithOne(String numberStr) {
 		return numberStr.startsWith("1");
 	}
 	
-	private StringPredicate() {
-		throw new AssertionError("No com.java8.problem.StringPredicate object for you !");
-	}
 }
 
 public class Problem_2 {
@@ -23,9 +20,10 @@ public class Problem_2 {
 		 */
 
 		List<Integer> numbers = List.of(11, 12, 21, 33, 55 , 131);
+		StringPredicate stringPredicate = new StringPredicate();
 		List<String> startWithOneNumbers = numbers.stream()
 								.map(String::valueOf)
-								.filter(StringPredicate::isStartWithOne)
+								.filter(stringPredicate::isStartWithOne)
 								.toList();
 
 		startWithOneNumbers.forEach(System.out::println);
