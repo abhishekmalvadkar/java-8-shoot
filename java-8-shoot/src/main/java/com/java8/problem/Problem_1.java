@@ -4,13 +4,10 @@ import java.util.List;
 
 class NumberPredicate {
 	
-	public static boolean isEvenNUmber(Integer number) {
+	public boolean isEvenNUmber(Integer number) {
 		return number % 2 == 0;
 	}
 	
-	private NumberPredicate(){
-		throw new AssertionError("No com.java8.problem.NumberPredicate instances for you!");
-	}
 }
 
 public class Problem_1 {
@@ -22,8 +19,9 @@ public class Problem_1 {
 	
 	public static void main(String[] args) {
 		List<Integer> numbers = List.of(1 , 5 , 2 , 3 , 8 , 7);
+		NumberPredicate numberPredicate = new NumberPredicate();
 		List<Integer> evenNumbers = numbers.stream()
-			   .filter(NumberPredicate::isEvenNUmber)
+			   .filter(numberPredicate::isEvenNUmber)
 			   .toList();
 		// void accept(T t);
 		evenNumbers.forEach(System.out::println);
