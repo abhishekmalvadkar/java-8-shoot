@@ -2,10 +2,14 @@ package com.java8.problem;
 
 import java.util.List;
 
-interface NumberPredicate {
+class NumberPredicate {
 	
 	public static boolean isEvenNUmber(Integer number) {
 		return number % 2 == 0;
+	}
+	
+	private NumberPredicate(){
+		throw new AssertionError("No com.java8.problem.NumberPredicate instances for you!");
 	}
 }
 
