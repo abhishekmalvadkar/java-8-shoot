@@ -1,7 +1,6 @@
 package com.java8.problem;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 public class Problem_2 {
 
