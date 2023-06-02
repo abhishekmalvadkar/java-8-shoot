@@ -2,6 +2,13 @@ package com.java8.problem;
 
 import java.util.List;
 
+interface NumberPredicate {
+	
+	public static boolean isEvenNUmber(Integer number) {
+		return number % 2 == 0;
+	}
+}
+
 public class Problem_1 {
 
 	/**
@@ -12,7 +19,7 @@ public class Problem_1 {
 	public static void main(String[] args) {
 		List<Integer> numbers = List.of(1 , 5 , 2 , 3 , 8 , 7);
 		List<Integer> evenNumbers = numbers.stream()
-			   .filter(Problem_1::isEvenNUmber)
+			   .filter(NumberPredicate::isEvenNUmber)
 			   .toList();
 		// void accept(T t);
 		evenNumbers.forEach(System.out::println);
@@ -21,8 +28,5 @@ public class Problem_1 {
 		
 	}
 
-	private static boolean isEvenNUmber(Integer number) {
-		return number % 2 == 0;
-	}
 
 }
