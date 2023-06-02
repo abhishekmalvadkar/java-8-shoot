@@ -2,10 +2,14 @@ package com.java8.problem;
 
 import java.util.List;
 
-interface StringPredicate {
+class StringPredicate {
 	
 	public static boolean isStartWithOne(String numberStr) {
 		return numberStr.startsWith("1");
+	}
+	
+	private StringPredicate() {
+		throw new AssertionError("No com.java8.problem.StringPredicate object for you !");
 	}
 }
 
