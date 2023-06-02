@@ -1,6 +1,7 @@
 package com.java8.problem;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Problem_2 {
 
@@ -12,9 +13,11 @@ public class Problem_2 {
 		 */
 
 		List<Integer> numbers = List.of(11, 12, 21, 33, 55 , 131);
+		Predicate<String> isStartWithOnePredicate = numberStr -> numberStr.startsWith("1");
 		List<String> startWithOneNumbers = numbers.stream()
 								.map(String::valueOf)
-								.filter(numberStr -> numberStr.startsWith("1")).toList();
+								.filter(isStartWithOnePredicate)
+								.toList();
 
 		startWithOneNumbers.forEach(System.out::println);
 
