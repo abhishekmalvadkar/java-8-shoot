@@ -23,12 +23,16 @@ public class Problem_3 {
 		List<Integer> duplicateNumbers = numberToCountMap
 				.entrySet()
 				.stream()
-				.filter(entry -> entry.getValue() > 1)
+				.filter(entry -> isCountMoreThanOne(entry))
 				.map(Entry::getKey)
 				.toList();
 
 		System.out.println(duplicateNumbers);
 
+	}
+
+	private static boolean isCountMoreThanOne(Entry<Integer, Long> entry) {
+		return entry.getValue() > 1;
 	}
 
 }
