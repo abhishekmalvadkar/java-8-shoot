@@ -2,7 +2,6 @@ package com.java8.problem;
 
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class Problem_3 {
 				.stream()
 				.filter(entry -> entry.getValue() > 1)
 				.map(entry -> entry.getKey())
-				.collect(toList());
+				.toList();
 
 		System.out.println(duplicateNumbers);
 
