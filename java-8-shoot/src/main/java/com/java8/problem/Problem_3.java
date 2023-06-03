@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
 import java.util.List;
+import java.util.Map.Entry;
 
 public class Problem_3 {
 
@@ -20,7 +21,7 @@ public class Problem_3 {
 				.entrySet()
 				.stream()
 				.filter(entry -> entry.getValue() > 1)
-				.map(entry -> entry.getKey())
+				.map(Entry::getKey)
 				.toList();
 
 		System.out.println(duplicateNumbers);
