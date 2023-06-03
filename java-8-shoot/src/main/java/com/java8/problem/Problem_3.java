@@ -23,7 +23,7 @@ public class Problem_3 {
 		List<Integer> duplicateNumbers = numberToCountMap
 				.entrySet()
 				.stream()
-				.filter(entry -> isCountMoreThanOne(entry))
+				.filter(Problem_3::isCountMoreThanOne)
 				.map(Entry::getKey)
 				.toList();
 
