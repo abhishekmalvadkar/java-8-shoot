@@ -1,6 +1,5 @@
 package com.java8.problem;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,13 +24,11 @@ public class Problem_3 {
 			}
 		}
 
-		List<Integer> duplicateNumbers = new ArrayList<>();
+		List<Integer> duplicateNumbers = numberToCountMap.keySet()
+				.stream()
+				.filter(key -> numberToCountMap.get(key) > 1)
+				.toList();
 
-		for (Integer key : numberToCountMap.keySet()) {
-			if (numberToCountMap.get(key) > 1) {
-				duplicateNumbers.add(key);
-			}
-		}
 
 		System.out.println(duplicateNumbers);
 
