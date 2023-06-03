@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Function;
 
-interface MapPredicate{
+class MapPredicate{
 	
-	public static boolean isCountMoreThanOne(Entry<Integer, Long> entry) {
+	public  boolean isCountMoreThanOne(Entry<Integer, Long> entry) {
 		return entry.getValue() > 1;
 	}
 }
@@ -27,10 +27,11 @@ public class Problem_3 {
 		List<Integer> numbers = List.of(7, 1, 5, 2, 1, 5, 6, 6, 7);
 		Map<Integer, Long> numberToCountMap = numbers.stream()
 				.collect(groupingBy(Function.identity(), counting()));
+		MapPredicate mapPredicate = new MapPredicate();
 		List<Integer> duplicateNumbers = numberToCountMap
 				.entrySet()
 				.stream()
-				.filter(MapPredicate::isCountMoreThanOne)
+				.filter(mapPredicate::isCountMoreThanOne)
 				.map(Entry::getKey)
 				.toList();
 
