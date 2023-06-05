@@ -22,10 +22,14 @@ public class Problem_4 {
 		Optional<Integer> findFirstOpt = numbers.stream()
 			   .findFirst();
 		Integer firstElement = findFirstOpt
-			   .orElseThrow(() -> new RecordNotFoundException("There is not first element in given number list"));
+			   .orElseThrow(() -> throwNoRecordFountException());
 		
 		System.out.println(firstElement);
 
+	}
+
+	private static RecordNotFoundException throwNoRecordFountException() {
+		return new RecordNotFoundException("There is not first element in given number list");
 	}
 
 }
