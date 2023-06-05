@@ -22,7 +22,7 @@ public class Problem_4 {
 		Optional<Integer> findFirstOpt = numbers.stream()
 			   .findFirst();
 		Integer firstElement = findFirstOpt
-			   .orElseThrow(() -> throwNoRecordFountException());
+			   .orElseThrow(Problem_4::throwNoRecordFountException);
 		
 		System.out.println(firstElement);
 
