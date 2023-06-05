@@ -9,6 +9,13 @@ class RecordNotFoundException extends RuntimeException {
 	}
 }
 
+class ExceptionThrower {
+	
+	public static RecordNotFoundException throwNoRecordFountException() {
+		return new RecordNotFoundException("There is not first element in given number list");
+	}
+}
+
 public class Problem_4 {
 
 	public static void main(String[] args) {
@@ -22,14 +29,11 @@ public class Problem_4 {
 		Optional<Integer> findFirstOpt = numbers.stream()
 			   .findFirst();
 		Integer firstElement = findFirstOpt
-			   .orElseThrow(Problem_4::throwNoRecordFountException);
+			   .orElseThrow(ExceptionThrower::throwNoRecordFountException);
 		
 		System.out.println(firstElement);
 
 	}
 
-	private static RecordNotFoundException throwNoRecordFountException() {
-		return new RecordNotFoundException("There is not first element in given number list");
-	}
 
 }
