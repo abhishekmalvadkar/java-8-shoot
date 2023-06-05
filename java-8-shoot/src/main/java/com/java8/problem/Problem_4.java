@@ -4,6 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 class RecordNotFoundException extends RuntimeException {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public RecordNotFoundException(String message) {
 		super(message);
 	}
