@@ -13,6 +13,8 @@ class MaxNumberNotFoundException extends RuntimeException{
 
 public class Problem_6 {
 
+	private static final Comparator<Integer> INTEGER_NATURAL_ORDER_COMPARATOR = Comparator.naturalOrder();
+
 	public static void main(String[] args) {
 
 		/**
@@ -22,7 +24,7 @@ public class Problem_6 {
 		List<Integer> numbers = List.of(1,4 , 6 , 10 , 6);
 
 		Integer maxNumber = numbers.stream()
-			   .max(Comparator.naturalOrder()) // int compare(T o1, T o2);
+			   .max(INTEGER_NATURAL_ORDER_COMPARATOR) // int compare(T o1, T o2);
 			   .orElseThrow(() -> new MaxNumberNotFoundException("Maximum number not found")); // T get();
 		
 		System.out.println(maxNumber);
