@@ -9,6 +9,9 @@ class MaxNumberNotFoundException extends RuntimeException{
 		super(message);
 	}
 	
+	public static MaxNumberNotFoundException doThrow() {
+		return new MaxNumberNotFoundException("Maximum number not found");
+	}
 }
 
 public class Problem_6 {
@@ -25,15 +28,12 @@ public class Problem_6 {
 
 		Integer maxNumber = numbers.stream()
 			   .max(INTEGER_NATURAL_ORDER_COMPARATOR) // int compare(T o1, T o2);
-			   .orElseThrow(Problem_6::throwMaxNumberNotFoundException); // T get();
+			   .orElseThrow(MaxNumberNotFoundException::doThrow); // T get();
 		
 		System.out.println(maxNumber);
 
 	}
 
-	private static MaxNumberNotFoundException throwMaxNumberNotFoundException() {
-		return new MaxNumberNotFoundException("Maximum number not found");
-	}
 
 
 }
