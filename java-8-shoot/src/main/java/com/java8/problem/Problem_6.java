@@ -5,6 +5,8 @@ import java.util.List;
 
 class MaxNumberNotFoundException extends RuntimeException{
 	
+	private static final long serialVersionUID = 1L;
+
 	public MaxNumberNotFoundException(String message) {
 		super(message);
 	}
