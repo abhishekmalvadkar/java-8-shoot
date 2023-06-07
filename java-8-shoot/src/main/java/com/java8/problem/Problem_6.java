@@ -25,7 +25,7 @@ public class Problem_6 {
 
 		Integer maxNumber = numbers.stream()
 			   .max(INTEGER_NATURAL_ORDER_COMPARATOR) // int compare(T o1, T o2);
-			   .orElseThrow(() -> throwMaxNumberNotFoundException()); // T get();
+			   .orElseThrow(Problem_6::throwMaxNumberNotFoundException); // T get();
 		
 		System.out.println(maxNumber);
 
