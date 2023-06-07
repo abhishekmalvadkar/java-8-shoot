@@ -25,10 +25,14 @@ public class Problem_6 {
 
 		Integer maxNumber = numbers.stream()
 			   .max(INTEGER_NATURAL_ORDER_COMPARATOR) // int compare(T o1, T o2);
-			   .orElseThrow(() -> new MaxNumberNotFoundException("Maximum number not found")); // T get();
+			   .orElseThrow(() -> throwMaxNumberNotFoundException()); // T get();
 		
 		System.out.println(maxNumber);
 
+	}
+
+	private static MaxNumberNotFoundException throwMaxNumberNotFoundException() {
+		return new MaxNumberNotFoundException("Maximum number not found");
 	}
 
 
